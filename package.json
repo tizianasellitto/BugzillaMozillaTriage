@@ -1,0 +1,11 @@
+{
+    "license": "",
+    "description": "bugzilla utility for Mozilla",
+    "author": "Tiziana Sellitto",
+    "dependencies": ["toolbar-buttons", "api-utils", "addon-kit"],
+    "version": "0.1",
+    "lib": "lib",
+    "fullName": "bugzilla triage",
+    "main": "main",
+    "id": "jid0-W98PHBMVm7TBsQGPGxpmu7XxGno",
+    "name": "bugzilla-triage"}
