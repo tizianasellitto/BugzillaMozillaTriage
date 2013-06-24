@@ -1,6 +1,5 @@
 addon.port.on("show", function () {
-              document.getElementById("userBugs").innerHTML = "";
-              document.getElementById("user").innerHTML = "";
+              document.getElementById("results").innerHTML = "";
               });
 
 function getUser(){
@@ -11,12 +10,11 @@ function getUser(){
 addon.port.on('user', user);
 
 function user(response) {
-    document.getElementById("userBugs").innerHTML = "";
-    document.getElementById("user").innerHTML = response.result.users[0].real_name;
- }
+    document.getElementById("results").innerHTML = response.result.users[0].real_name;
+}
 
 
-function getUserBug(){
+function getUserBugs(){
     var user=document.getElementById('userInput');
     addon.port.emit('getUserBugs', user.value);
 }
@@ -24,11 +22,30 @@ function getUserBug(){
 addon.port.on('userBugs', userBugs);
 
 function userBugs(response) {
-    document.getElementById("user").innerHTML = "";
+    document.getElementById("results").innerHTML = "";
     var values="";
-    var oldHTML = document.getElementById('userBugs').innerHTML;
-       response.result.bugs.forEach(function(entry) {
-        values += "<p> ID :"+ entry.id + " Bug Summary: "+ entry.summary +"</p>";
-    });
-       document.getElementById("userBugs").innerHTML = values ;
+    var oldHTML = document.getElementById('results').innerHTML;
+    response.result.bugs.forEach(function(entry) {
+                                 values += "<p> ID :"+ entry.id + " Bug Summary: "+ entry.summary +"</p>";
+                                 });
+    document.getElementById("results").innerHTML = values ;
+}
+
+
+
+function getUserAssignedBugs(){
+    var user=document.getElementById('userInput');
+    addon.port.emit('getUserAssignedBugs', user.value);
+}
+
+addon.port.on('userAssignedBugs', userAssignedBugs);
+
+function userAssignedBugs(response) {
+    document.getElementById("results").innerHTML = "";
+    var values="";
+    var oldHTML = document.getElementById('results').innerHTML;
+    response.result.bugs.forEach(function(entry) {
+                                 values += "<p> ID :"+ entry.id + " Bug Status: "+ entry.status + " Bug Last Update: "+ entry.last_change_time + " Bug Summary: "+ entry.summary +"</p>";
+                                 });
+    document.getElementById("results").innerHTML = values ;
 }
