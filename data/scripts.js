@@ -26,11 +26,17 @@ function userBugs(response) {
     var values="";
     var oldHTML = document.getElementById('results').innerHTML;
     response.result.bugs.forEach(function(entry) {
-                                 values += "<p> ID :"+ entry.id + " Bug Summary: "+ entry.summary +"</p>";
+                                 values += "<p> ID <a href='' onclick='javascript:openBug("+entry.id+")'>"+ entry.id + "</a> Bug Status: "+ entry.status + " Bug Last Update: "+ entry.last_change_time + " Bug Summary: "+ entry.summary +"</p>";
                                  });
+    
+    886358
     document.getElementById("results").innerHTML = values ;
 }
 
+function openBug(id){
+    addon.port.emit('openBug',id);
+    
+}
 
 
 function getUserAssignedBugs(){
