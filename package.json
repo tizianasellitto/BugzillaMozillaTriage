@@ -8,4 +8,14 @@
     "fullName": "bugzilla triage",
     "main": "main",
     "id": "jid0-W98PHBMVm7TBsQGPGxpmu7XxGno",
-    "name": "bugzilla-triage"}
+    "name": "bugzilla-triage",
+
+ "preferences": [{
+    "name": "mail",
+    "title": "User Mail",
+    "description": "Default user email used in the bugzilla account",
+    "type": "string",
+    "value": "tiziana.sel@gmail.com"
+   }]
+
+}
