@@ -19,6 +19,7 @@ window.onload = function() {
     }
 }
 
+
 addon.port.on("show", function () {
               document.getElementById("results").innerHTML = "";
               document.getElementById("notification").innerHTML ="";
@@ -27,9 +28,9 @@ addon.port.on("show", function () {
 function openBug(id){
     addon.port.emit('openBug',id);
 }
+
 function openUrl(url){
     addon.port.emit('open',url);
-    //    addon.port.emit('open','https://bugzilla.mozilla.org/buglist.cgi?list_id=6185685&resolution=---&resolution=DUPLICATE&query_format=advanced&bug_status=UNCONFIRMED&product=Websites');
 }
 
 //get user info
@@ -47,8 +48,6 @@ function user(response) {
     }
     else
         document.getElementById("notification").innerHTML = "No user with that mail";
-    
-    
 }
 
 
@@ -88,9 +87,7 @@ function userBugs(response) {
                                      });
         values+="</table>";
         document.getElementById("results").innerHTML = values ;
-        
     }
-    
 }
 
 
@@ -201,11 +198,45 @@ addon.port.on('loadQueryResponse3', loadQueryResponse3);
 function loadQueryResponse3(response) {
     var currentDate = new Date();
     currentDate.setMonth( currentDate.getMonth()-1);
-    var twoDigitMonth=((currentDate.getMonth()+1)>=10)? (currentDate.getMonth()+1) : '0' + (currentDate.getMonth()+1);  
+    var twoDigitMonth=((currentDate.getMonth()+1)>=10)? (currentDate.getMonth()+1) : '0' + (currentDate.getMonth()+1);
     var twoDigitDate=((currentDate.getDate())>=10)? (currentDate.getDate()) : '0' + (currentDate.getDate());
-    var dayString = currentDate.getFullYear() + "-" + twoDigitMonth + "-" + twoDigitDate; 
+    var dayString = currentDate.getFullYear() + "-" + twoDigitMonth + "-" + twoDigitDate;
     
     
     var url= "https://bugzilla.mozilla.org/buglist.cgi?list_id=7119507&resolution=---&resolution=DUPLICATE&chfieldto=Now&chfield=%5BBug%20creation%5D&query_format=advanced&bug_status=UNCONFIRMED&component=Untriaged&product=Firefox&chfieldfrom="+dayString;
-    document.getElementById("3").innerHTML = "Untriaged Firefox -1m <a href='' onclick='javascript:openUrl(\""+url+"\")'>(" +response.result.bugs.length+")</a>"; 
+    document.getElementById("3").innerHTML = "Untriaged Firefox -1m <a href='' onclick='javascript:openUrl(\""+url+"\")'>(" +response.result.bugs.length+")</a>";
+}
+
+
+
+
+
+//change tab active to Searches
+function getSearches(){
+    addon.port.emit('searches');
+}
+
+addon.port.on('searchesTabReturn', searchesTabReturn);
+
+function searchesTabReturn(storage) {
+    var listTab = document.getElementById("list");
+    document.getElementById("list").className = "attivo";
+    document.getElementById("new").className = "";
+    
+    document.getElementById('searches').style.zIndex = "1";
+    document.getElementById('projects').style.zIndex = "-1";
+}
+
+//change tab active to Project
+function getProjects(){
+    document.getElementById("results").innerHTML = "";
+    document.getElementById("notification").innerHTML ="";
+    
+    var newTab = document.getElementById("new");
+    document.getElementById('new').className = "attivo";
+    document.getElementById('list').className = "";
+    document.getElementById('searches').style.zIndex = "-1";
+    document.getElementById('projects').style.zIndex = "1";
+    
+    addon.port.emit('getProjects');
 }

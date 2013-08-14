@@ -3,25 +3,49 @@
     <head>
         <title></title>
         <script type="text/javascript" src="scripts.js"></script>
+        <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1" />
+        <link href="all.css" rel="stylesheet" type="text/css" media="all" />
+        
     </head>
     <body>
-        User: <input type="text" id="userInput">
-            <select id="transfer_reason" name="transfer_reason">
-                <option value="">Select</option>
-                <option value="getUser">Get Uer Info</option>
-                <option value="getUserBugs">Get User Created Bugs</option>
-                <option value="getUserAssignedBugs">Get User Assigned Bugs</option>
-                <option value="getUserQAcontactBugs">Get User QA Contact Bugs</option>
-            </select>
-            </br>
-            <ul>
-                <li id="1"> Lading Bugmaters Projects</li>
-                <li id="2">       </li>
-                <li id="3">       </li>
-            </ul>
-            </br>
-            <div id="notification"></div>
-            </br>
-            <div id="results"></div>
-            </body>
+        <div class="header">
+            <div id="tabs">
+                <a id="list" class="attivo" onClick="javascript:getSearches()">Bugzilla Searches</a>
+                <a id="new" onclick="javascript:getProjects()">Bugmasters Projects</a>
+            </div>
+        </div>
+        
+        <div id="container">
+            <div id="projects">
+                <p>A list of part of the Bugmasters Projects. You can find more info on <a href="https://wiki.mozilla.org/Bugmasters/Projects" target="_blank">Bugmasters Projects</a> page.</p>
+                <p>Explore the <a href="http://www.tizianasellitto.it/trainingmontage/bugzilla-triage-tutorial.html" target="_blank">bugzilla triage tutorial</a>
+                before starting triaging and join the <a href="irc://irc.mozilla.org#bugmasters" target="_blank">#bugmasters</a> channel for any question. </p>
+                <ul>
+                    <li id="1">Loading Bugmaters Projects</li>
+                    <li id="2"></li>
+                    <li id="3"></li>
+                </ul>
+            </div>
+            
+            <div id="searches" >
+                <p>Insert a mail linked to a bugzilla account or leave the "Mail" field blank to search with the deafult field set in the preferences.</p>
+                Mail: <input type="text" id="userInput">
+                    <select id="transfer_reason" name="transfer_reason">
+                        <option value="">Select</option>
+                        <option value="getUser">Get Uer Info</option>
+                        <option value="getUserBugs">Get User Created Bugs</option>
+                        <option value="getUserAssignedBugs">Get User Assigned Bugs</option>
+                        <option value="getUserQAcontactBugs">Get User QA Contact Bugs</option>
+                    </select>
+                    <div id="notification"></div>
+                    </br>
+                    <div id="results"></div>
+                    </div>
+            
+            
+        </div>
+        
+        
+        
+    </body>
 </html>

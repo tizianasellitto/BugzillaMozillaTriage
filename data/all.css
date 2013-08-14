@@ -64,8 +64,8 @@ div#projects {
 	left: 30px;
 	top: 10px;
 	right: 10px;
-	bottom: 0px;
-	z-index: 1;
+	bottom: 10px;
+	z-index: -1;
 }
 
 div#searches {
@@ -75,8 +75,8 @@ div#searches {
 	left: 30px;
 	top: 10px;
     right: 10px;
-	bottom: 0px;
-	z-index: -1;
+	bottom: 10px;
+	z-index: 1;
 	}
 
 #tabs {

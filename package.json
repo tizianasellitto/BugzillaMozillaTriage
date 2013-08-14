@@ -1,14 +1,14 @@
 {
     "license": "",
-    "description": "bugzilla utility for Mozilla",
+    "description": "Bugmasters utility for triaging on Bugzilla",
     "author": "Tiziana Sellitto",
     "dependencies": ["toolbar-buttons", "api-utils", "addon-kit"],
-    "version": "0.1",
+    "version": "1.0",
     "lib": "lib",
-    "fullName": "bugzilla triage",
+    "fullName": "bugmasters",
     "main": "main",
     "id": "jid0-W98PHBMVm7TBsQGPGxpmu7XxGno",
-    "name": "bugzilla-triage",
+    "name": "bugmasters-utility",
 
  "preferences": [{
     "name": "mail",
