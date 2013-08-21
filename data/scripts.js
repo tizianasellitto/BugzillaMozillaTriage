@@ -11,7 +11,7 @@ window.onload = function() {
 		} else if (eSelect.value === "getUserQAcontactBugs") {
 			getUserQAcontactBugs();
 		}
-		//eSelect.selectedIndex=0;
+		eSelect.selectedIndex=0;
 	}
 }
 
