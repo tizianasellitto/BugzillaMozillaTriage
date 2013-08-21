@@ -1,8 +1,8 @@
 html,body,div {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
 	vertical-align: baseline;
 	background: transparent;
 }
@@ -43,7 +43,7 @@ input {
 	margin-bottom: 15px;
 }
 
-#notification {
+#notification, #notificationTriage {
 	border: 0;
 	color: red;
 	top: 20px;
@@ -74,10 +74,21 @@ div#searches {
 	height: 260px;
 	left: 30px;
 	top: 10px;
-    right: 10px;
+	right: 10px;
 	bottom: 10px;
 	z-index: 1;
-	}
+}
+
+div#triageMe {
+	position: absolute;
+	width: 700px;
+	height: 260px;
+	left: 30px;
+	top: 10px;
+	right: 10px;
+	bottom: 10px;
+	z-index: -1;
+}
 
 #tabs {
 	float: right;
