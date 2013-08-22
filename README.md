@@ -1,7 +1,7 @@
 BugzillaMozillaTriage
 =====================
 
-A tutorial to walk people through bug triage for incoming bugs on bugzilla.mozilla.org.
+An add-on to be a tool for bug wranglers to triage bugs on bugzilla.mozilla.org.
 
 See http://wiki.mozilla.org/Bugmasters
 
