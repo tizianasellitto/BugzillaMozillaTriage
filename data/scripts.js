@@ -106,10 +106,10 @@ addon.port.on('userAssignedBugs', userAssignedBugs);
 
 function userAssignedBugs(response) {
 	if (response.result != null && response.result.bugs.length == 0) {
-		document.getElementById("notification").innerHTML = "No Bugs assigned to the user selected";
+		document.getElementById("notification").innerHTML = "No bugs assigned to the user selected";
 		document.getElementById("results").innerHTML = "";
 	} else {
-		document.getElementById("notification").innerHTML = "Get Bugs assigned to "
+		document.getElementById("notification").innerHTML = "Get bugs assigned to "
 				+ response.result.bugs[0].assigned_to;
 		document.getElementById("results").innerHTML = "";
 		var values = "<table width='98%' border='1' cellpadding='5' cellspacing='0'>";
@@ -148,10 +148,10 @@ addon.port.on('userQAcontactBugs', userQAcontactBugs);
 
 function userQAcontactBugs(response) {
 	if (response.result != null && response.result.bugs.length == 0) {
-		document.getElementById("notification").innerHTML = "No Bugs where the QA contatct is the user selected";
+		document.getElementById("notification").innerHTML = "No bugs where the QA contatct is the user selected";
 		document.getElementById("results").innerHTML = "";
 	} else {
-		document.getElementById("notification").innerHTML = "Get Bugs with QA Contact set to "
+		document.getElementById("notification").innerHTML = "Get bugs with QA Contact set to "
 				+ response.result.bugs[0].qa_contact;
 		document.getElementById("results").innerHTML = "";
 		var values = "<table width='98%' border='1' cellpadding='5' cellspacing='0'>";
@@ -282,7 +282,7 @@ function triagingLatestUnconfirmedBugs(response) {
 		document.getElementById("notificationTriage").innerHTML = "No Bugs";
 		document.getElementById("resultsTriage").innerHTML = "";
 	} else {
-		document.getElementById("notificationTriage").innerHTML = "Get latest 3 UNCONFIREMED Bugs ";
+		document.getElementById("notificationTriage").innerHTML = "Get latest 3 UNCONFIRMED Bugs ";
 		document.getElementById("resultsTriage").innerHTML = "";
 
 		var values = "<table width='98%' border='1' cellpadding='5' cellspacing='0'>";
