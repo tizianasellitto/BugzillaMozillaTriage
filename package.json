@@ -1,8 +1,8 @@
 {
     "license": "",
-    "description": "Bugmasters utility for triaging on Bugzilla",
+    "description": "An add-on to be a tool for bug wranglers to triage bugs on bugzilla.mozilla.org",
     "author": "Tiziana Sellitto",
-    "dependencies": ["toolbar-buttons", "api-utils", "addon-kit"],
+
     "version": "1.0",
     "lib": "lib",
     "fullName": "bugmasters",
@@ -15,7 +15,7 @@
     "title": "User Mail",
     "description": "Default user email used in the bugzilla account",
     "type": "string",
-    "value": "tiziana.sel@gmail.com"
+    "value": "x@mail.com"
    }]
 
 }
