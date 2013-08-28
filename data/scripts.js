@@ -1,6 +1,5 @@
 window.onload = function() {
 	var eSelect = document.getElementById('transfer_reason');
-	var optOtherReason = document.getElementById('otherdetail');
 	eSelect.onchange = function() {
 		if (eSelect.value === "getUser") {
 			getUser();
