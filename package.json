@@ -12,8 +12,8 @@
 
  "preferences": [{
     "name": "mail",
-    "title": "bugzilla.mozilla.org Mail account",
-    "description": "Default mail linked to a bugzilla.mozilla.org account.",
+    "title": "bugzilla.mozilla.org Mail",
+    "description": "Default mail linked to a bugzilla.mozilla.org account",
     "type": "string",
     "value": "x@mail.com"
    }]
