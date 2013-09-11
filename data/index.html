@@ -2,6 +2,7 @@
 <html>
 <head>
 <title></title>
+<script type="text/javascript" src="jquery.min.js"></script>
 <script type="text/javascript" src="scripts.js"></script>
 <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1" />
 <link href="all.css" rel="stylesheet" type="text/css" media="all" />
@@ -25,14 +26,13 @@
 					onclick='javascript:openUrl("https://wiki.mozilla.org/Bugmasters/Projects")'>Bugmasters
 					Projects</a> page.
 			</p>
-			<ul>
-				<li id="1">Loading bugmaster projects</li>
-				<li id="2"></li>
-				<li id="3"></li>
-			</ul>
+            <div id="notification_projects"></div>
+			<ul class="list_projects">
+            </ul>
 		</div>
 
 		<div id="searches">
+            <form name="my-form" id="my-form" action="">
 			<table>
 				<tr>
 					<td colspan=2>
@@ -42,8 +42,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 35%;">Bugzilla email: <input type="text"
-						id="userInput">
+					<td style="width: 35%;">Bugzilla email: <input type="email"	 id="userInput" onblur="validate(this)" onkeyup="clearSelect()">
 					</td>
 					<td>
 					  <select id="transfer_reason" name="transfer_reason" size=5>
@@ -62,10 +61,15 @@
 				</tr>
 				<tr>
 					<td colspan=2>
-						<div id="results"></div>
+						<div id="results">
+                            <table id="table_results" width='98%' border='1' cellpadding='5' cellspacing='0'>
+                              
+                            </table>
+                        </div>
 					</td>
 				</tr>
 			</table>
+            </form>
 		</div>
 		<div id="triageMe">
 			<table>
@@ -82,12 +86,17 @@
 				</tr>
 				<tr>
 					<td colspan=2>
-						<div id="notificationTriage"></div>
+						<div id="notificationTriage">
+                        </div>
 					</td>
 				</tr>
 				<tr>
 					<td colspan=2>
-						<div id="resultsTriage"></div>
+						<div id="resultsTriage">
+                            <table id="table_results_triage" width='98%' border='1' cellpadding='5' cellspacing='0'>
+
+                            </table>
+                        </div>
 					</td>
 				</tr>
 			</table>

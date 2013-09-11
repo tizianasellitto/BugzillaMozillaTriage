@@ -16,17 +16,16 @@ body {
 }
 
 input {
-	border: 1px solid #999;
+   	border: 1px solid #999;
 	background-color: #dbdbdb;
 	font-size: 100%;
 	font-family: Trebuchet MS, Liberation Sans, DejaVu Sans, sans-serif;
 }
 
-input {
-	cursor: pointer;
-	margin: 5px 0 5px 0;
-	padding: 3px;
+input:valid{
+  box-shadow: none;
 }
+
 
 .attivo {
 	background: #f90;
@@ -43,7 +42,7 @@ input {
 	margin-bottom: 15px;
 }
 
-#notification, #notificationTriage {
+#notification, #notificationTriage, #notification_projects{
 	border: 0;
 	color: red;
 	top: 20px;
@@ -93,6 +92,7 @@ div#triageMe {
 #tabs {
 	float: right;
 	font-weight: bold;
+    cursor:pointer;
 }
 
 #tabs a {
