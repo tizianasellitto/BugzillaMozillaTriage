@@ -158,7 +158,7 @@ function loadQueryResponse(response) {
     
     $('.list_projects').append(
         $("<li>", { class: "1" , text: "Website bugs that are UNCO"})
-                  .append($("<a>", { href: "", text: "(" + response.result.bugs.length + ")" })
+                  .append($("<a>", { href: "#", text: "(" + response.result.bugs.length + ")" })
                                     .click(function (event) { openUrl(url) }))
     );
   
@@ -180,7 +180,7 @@ function loadQueryResponse2(response) {
 			+ dayString;
     $('.list_projects').append(
         $("<li>", { class: "2" , text: "Today's UNCO bugs for every product"})
-                .append($("<a>", { href: "", text: "(" + response.result.bugs.length + ")" })
+                .append($("<a>", { href: "#", text: "(" + response.result.bugs.length + ")" })
                                     .click(function (event) { openUrl(url) }))
     );
   
@@ -203,7 +203,7 @@ function loadQueryResponse3(response) {
     
     $('.list_projects').append(
         $("<li>", { class: "3" , text: "Untriaged Firefox -1 month"})
-                .append($("<a>", { href: "", text: "(" + response.result.bugs.length + ")" })
+                .append($("<a>", { href: "#", text: "(" + response.result.bugs.length + ")" })
                                     .click(function (event) { openUrl(url) }))
         );
     $(".notification_projects").empty();
@@ -326,7 +326,7 @@ function createTable(results,table){
         
         var cell1 = doc.createElement('td');
         var newLink=doc.createElement('a');
-        newLink.setAttribute('href','');
+        newLink.setAttribute('href','#');
         newLink.addEventListener("click", function () { openBug( entry.id )}, false);
         var linkText=doc.createTextNode(entry.id );
         
